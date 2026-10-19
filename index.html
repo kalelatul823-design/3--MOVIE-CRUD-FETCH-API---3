@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MOVIE CRUD API FETCH GENERIC- 3</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
+      integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <div class="background">
+      <img
+        src="./assets/img/netflex img.jpg"
+        alt="netFlex"
+        class="background-img"
+      />
+    </div>
+
+    <div class="container">
+      <div class="row mt-5">
+        <div class="col-md-6">
+          <div class="">
+            <a href="index.html" class="logo"
+              ><img src="./assets/img/netflex logo.svg" alt="netFlex logo"
+            /></a>
+          </div>
+        </div>
+        <div class="col-md-6 text-right align-self-center">
+          <button class="btn btn-sm netflix-pri-Color" id="addBtn">
+            Add Movie
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="backDrop" id="backDrop"></div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6">
+          <form id="form">
+            <div class="card movieModel" id="movieModel">
+              <div class="card-header d-flex justify-content-between">
+                <h3 class="m-0">ADD MOVIE</h3>
+                <i class="fa-solid fa-xmark fa-2x" id="closeIcon"></i>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="movieName">Movie Name</label>
+                      <input type="text" class="form-control" id="movieName" />
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="genre">Genre</label>
+                      <input type="text" class="form-control" id="genre" />
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="releaseDate">Release Date </label>
+                      <input
+                        type="date"
+                        class="form-control"
+                        id="releaseDate"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="movieImg">Movie Img</label>
+                  <input type="text" class="form-control" id="movieImg" />
+                </div>
+                <div class="form-group">
+                  <label for="movieDescription">Movie Description</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="movieDescription"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="movieRating">Movie Rating</label>
+                  <select class="form-control" id="movieRating">
+                    <option value="" selected disabled>Rating</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                  </select>
+                </div>
+              </div>
+              <div class="card-footer d-flex justify-content-between">
+                <button
+                  type="submit"
+                  class="btn btn-sm netflix-pri-Color"
+                  id="submitBtn"
+                >
+                  Add Movie
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-sm netflix-sec-color d-none"
+                  id="updateBtn"
+                >
+                  Update Movie
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-sm netflix-pri-Color"
+                  id="closeBtn"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="row mt-5" id="movieInfo">
+        <div class="col-md-3">
+          <div class="card movieCard">
+            <div class="card-header">
+              <div class="row">
+                <div class="col-10">
+                  <h3 class="m-0">Title</h3>
+                </div>
+                <div class="col-2">
+                  <h4 class="m-0">
+                    <span class="badge badge-success">5</span>
+                  </h4>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <figure>
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKJ4f1dsfoJLlOIAQYgFyiz4fPm-5qXQz_6ZvdiWG1ZQ&s=10"
+                  alt=""
+                />
+                <figcaption>
+                  <h3 class="m-0">Bahubali</h3>
+                  <p class="m-0">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Distinctio consectetur laboriosam, a autem quibusdam assum
+                  </p>
+                </figcaption>
+              </figure>
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+              <button class="btn btn-sm netflix-pri-Color">Edit</button>
+              <button class="btn btn-sm netflix-sec-color">Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="spinner d-none" id="spinner">
+      <div class="spinner-border text-info" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.25/dist/sweetalert2.all.min.js"></script>
+    <script src="./assets/js/app.js"></script>
+  </body>
+</html>
